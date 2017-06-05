@@ -10,7 +10,7 @@
     ctrl.submit = function () {
     ctrl.completed = true;
     ctrl.addUser = function(){
-      SignupService.addUser(ctrl.user);
+      ctrl.error = SignupService.addUser(ctrl.user);
     };
     ctrl.addUser();
 

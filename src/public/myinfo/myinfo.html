@@ -2,7 +2,7 @@
   <h2 id="menu-categories-title" class="text-center">
     My info
   </h2>
-  
+
   <div ng-if="myinfoCtrl.logged">
 
 
@@ -11,6 +11,20 @@
     </h3>
     <p>{{myinfoCtrl.user.email}}</p>
     <p>{{myinfoCtrl.user.phone}}</p>
+    <h3>Favorite dish information</h3>
+    <div class="row">
+    <div class="col-sm-5">
+      <div class="menu-item-photo">
+        <div>{{myinfoCtrl.user.dishInfo.short_name}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.user.dishInfo.short_name}}.jpg" alt="{{myinfoCtrl.user.dishInfo.name}}">
+      </div>
+      <div class="menu-item-price">{{myinfoCtrl.user.dishInfo.price_small | currency}}<span> {{myinfoCtrl.user.dishInfo.small_portion_name}}</span> {{myinfoCtrl.user.dishInfo.price_large | currency}} <span>{{myinfoCtrl.user.dishInfo.large_portion_name}}</span></div>
+    </div>
+    <div class="menu-item-description col-sm-7">
+      <h3 class="menu-item-title">{{myinfoCtrl.user.dishInfo.name}}</h3>
+      <p class="menu-item-details">{{myinfoCtrl.user.dishInfo.description}}</p>
+    </div>
+  </div>
   </div>
   <div class="" ng-if="!myinfoCtrl.logged">
     Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
