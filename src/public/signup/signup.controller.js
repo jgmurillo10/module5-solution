@@ -4,8 +4,16 @@
   angular.module('public')
   .controller('SignupController', SignupController);
 
-  //SignupController.$inject = [];
-  function SignupController() {
+  SignupController.$inject = ['SignupService'];
+  function SignupController(SignupService) {
     let ctrl =this;
+    ctrl.submit = function () {
+    ctrl.completed = true;
+    ctrl.addUser = function(){
+      SignupService.addUser(ctrl.user);
+    };
+    ctrl.addUser();
+
+  };
   }
 })();

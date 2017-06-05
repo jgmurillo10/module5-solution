@@ -2,7 +2,18 @@
   <h2 id="menu-categories-title" class="text-center">
     My info
   </h2>
+  
+  <div ng-if="myinfoCtrl.logged">
 
 
+    <h3>
+      {{myinfoCtrl.user.name}} {{myinfoCtrl.user.lastname}}
+    </h3>
+    <p>{{myinfoCtrl.user.email}}</p>
+    <p>{{myinfoCtrl.user.phone}}</p>
+  </div>
+  <div class="" ng-if="!myinfoCtrl.logged">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
 
 </div>
